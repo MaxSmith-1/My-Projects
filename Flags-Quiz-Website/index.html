@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="main"> 
+    <h1>Flags of the World Quiz</h1>
+    </div>
+    <div>Use capital letters and correct spelling</div>
+       <div>Press Start to start game</div>
+    
+   <div id="time-box">Time left = <span id="timer"></span></div>
+    <input type = "text" autocomplete="off" id ="search"></input>
+    <button id="btn" onclick = "startTimer(); flag(random());">Start</button>
+    <button onclick = "guess()">Guess</button>
+    <button onclick="flag(random())">Next</button>
+    <div id="stuff-container">  
+    <div id="score-container"></div>   
+    <div id="game-beaten"></div>
+    <div id="flag-container"></div>
+</div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
