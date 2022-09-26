@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <h1>Fantasy Football Trade Calculator</h1>
+  </head>
+  <body>
+  <div id = "awayBox">
+    <h2>Team 1 will get:</h2>
+    <div>Player 1</<div>
+    <input type = "text" autocomplete="off" id ="given1"></input>
+    <div>Player 2</<div>
+    <input type = "text" autocomplete="off" id ="given2"></input>
+    <div>Player 3</<div>
+    <input type = "text" autocomplete="off" id ="given3"></input>
+</div>
+<div id = "receiveBox">
+    <h2>Team 2 will get:</h2>
+    <div>Player 1</<div>
+    <input type = "text" autocomplete="off" id ="received1"></input>
+    <div>Player 2</<div>
+    <input type = "text" autocomplete="off" id ="received2"></input>
+    <div>Player 3</<div>
+    <input type = "text" autocomplete="off" id ="received3"></input>
+
+  </div>
+    <button id = "analyze" onclick = "correct(); calculate()">Analyze</button>
+    <div id = "results1Box"> </div>  
+    <div id="bottom-stuff">
+      <div id="bottom"> Powered by FFDP (https://www.fantasyfootballdatapros.com/)</div>
+</div>
+   
+    <script src="script.js"></script>
+  </body>
+</html>

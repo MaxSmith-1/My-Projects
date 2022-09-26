@@ -1,0 +1,26 @@
+body {
+  background: url(istockphoto-531912354-612x612.jpg);
+}
+
+#awayBox{
+
+  color: yellow;
+}
+
+#receiveBox{
+  color:  violet;
+}
+
+#results1Box{
+  color: greenyellow;
+}
+
+#bottom-stuff {
+    padding: 0px 30px 30px 30px;
+    margin-left:150px;
+    position: relative;
+}
+
+#bottom{
+    position: absolute; bottom: -90px; 
+}
