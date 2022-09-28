@@ -12,8 +12,8 @@ driver.get(url)
 driver.maximize_window()
 
 #login
-driver.find_element(By.ID, "index_email").send_keys("+18169147791")
-driver.find_element(By.ID, "index_pass").send_keys("____mkhane123")
+driver.find_element(By.ID, "index_email").send_keys("your phone number")
+driver.find_element(By.ID, "index_pass").send_keys("your password")
 driver.find_element(By.ID, "index_login_button").click()
 
 sleep(2)
