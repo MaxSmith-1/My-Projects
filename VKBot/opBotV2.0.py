@@ -68,6 +68,6 @@ class VkBot:
 #reply_fakebox
 count = 0
 
-VkBot("+18169147791", "____mkhane123")
+VkBot("your phone number", "your password")
 
 
