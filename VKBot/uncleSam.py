@@ -26,9 +26,9 @@ class VkBot:
         sleep(2)
 
 
+       
+
         #login
-
-
         self.driver.find_element(By.ID, "index_email").send_keys(username)
 
         self.driver.find_element(By.CLASS_NAME, "VkIdForm__signInButton").click()
@@ -54,6 +54,8 @@ class VkBot:
             #self.driver.find_element(By.CLASS_NAME, "wall_post_cont").click()
 
                 sleep(1)
+                
+                #Here is where you type your message
                 self.driver.find_element(By.CLASS_NAME, "reply_field").send_keys("дети Украины ;( https://www.youtube.com/watch?v=_fFOYnKT4lg")
 
 
