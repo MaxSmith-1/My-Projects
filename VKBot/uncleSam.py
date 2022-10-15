@@ -1,6 +1,6 @@
 #Troll software
 #use vpn for security if your saying something provocative
-#Breaks for posts with comments turned off, and some video posts
+#FIXED: Breaks for posts with comments turned off, and some video posts
 from selenium import webdriver
 from time import sleep
 
