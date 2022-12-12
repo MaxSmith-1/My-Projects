@@ -10,3 +10,7 @@ VKBot:
 
 pygame_notes:
   Space Invaders game, see if you can find the easter egg (still working on it btw)
+
+
+7v7 Football game:
+  My final project for my AP Computer Science class, pretty cool
