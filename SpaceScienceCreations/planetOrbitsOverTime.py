@@ -87,7 +87,7 @@ def graph(y,m,d,tD,r):
     plt.subplots_adjust(bottom =.25)
     sliderA = plt.axes([0.1,0.1,.8,.05])
 
-    sliderVal = Slider(sliderA, "Days Since ", valmin=0, valmax=tD, valinit=tD, valstep=1)
+    sliderVal = Slider(sliderA, "Days Since ", valmin=0, valmax=tD, valinit=tD, valstep=1, closedmin=False)
 
     #onchanged
 
@@ -108,8 +108,7 @@ def graph(y,m,d,tD,r):
     sliderVal.on_changed(updateValue)
     plt.show()
 
-    # How many days is the SSB outside the Sun? First, we compute the euclidean
-    # distance between the SSB and Sun.
+   
 
 graph(2023,1,1,365,6)
 
