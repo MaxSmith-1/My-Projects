@@ -14,3 +14,9 @@ pygame_notes:
 
 7v7 Console Football game:
   My final project for my AP Computer Science class, pretty cool
+
+SpaceScienceExperimentation:
+  Following tutorials from Astroniz "Space Science with Python" https://www.youtube.com/playlist?list=PLNvIBWkEdZ2iCc8G9dvx6MQvBruJG-TE8
+
+SpaceScienceCreations:
+  My own worked derived from "Space Science with Python"
