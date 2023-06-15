@@ -8,8 +8,9 @@ import spiceypy
 import numpy as np
 import datetime
 from matplotlib import pyplot as plt
+from matplotlib.widgets import Slider
 
-
+#Kerels are furnished, we have the information needed to pull data from spice
 spiceypy.furnsh("./kernels/lsk/naif0012.tls")
 spiceypy.furnsh("./kernels/spk/de432s.bsp")
 spiceypy.furnsh("./kernels/pck/gm_de431.tpc")
@@ -54,6 +55,11 @@ def orbitGraph(y, m, d, tD, planetId):
 
 def graph(y,m,d,tD,r):
 
+    if r<=6:
+        a=3000
+    else:
+        a=6000
+
     orbitColors = ["", "yellow", "orange", "blue", "red", "orange", "yellow", "blue", "blue"]
     plt.style.use("dark_background")
 
@@ -73,17 +79,39 @@ def graph(y,m,d,tD,r):
     ax.grid(True, linestyle="dashed",alpha=.4)
     ax.set_xlabel("Distance from Sun (1 unit = 69600 km)")
     ax.set_ylabel("Distance from Sun (1 unit = 69600 km)")
-    ax.set_xlim(-500,500)
-    ax.set_ylim(-500,500)
+    ax.set_xlim(-a,a)
+    ax.set_ylim(-a,a)
 
+    #When we have a slider, we are changing the TD value
 
+    plt.subplots_adjust(bottom =.25)
+    sliderA = plt.axes([0.1,0.1,.8,.05])
 
+    sliderVal = Slider(sliderA, "Days Since ", valmin=0, valmax=tD, valinit=tD, valstep=1)
+
+    #onchanged
+
+    def updateValue(val):
+        ax.clear()
+        for i in range(r):
+            if i != 0:
+                ax.plot(orbitGraph(y, m, d, sliderVal.val, i)[:, 0], orbitGraph(y, m, d, sliderVal.val, i)[:, 1], linestyle='solid',
+                        color=orbitColors[i], alpha=1)
+
+        ax.set_aspect("equal")
+        ax.grid(True, linestyle="dashed", alpha=.4)
+        ax.set_xlabel("Distance from Sun (1 unit = 69600 km)")
+        ax.set_ylabel("Distance from Sun (1 unit = 69600 km)")
+        ax.set_xlim(-a, a)
+        ax.set_ylim(-a, a)
+
+    sliderVal.on_changed(updateValue)
     plt.show()
 
     # How many days is the SSB outside the Sun? First, we compute the euclidean
     # distance between the SSB and Sun.
 
-graph(2027,1,1,200,5)
+graph(2023,1,1,365,6)
 
 
 
