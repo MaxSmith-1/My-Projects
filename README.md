@@ -20,3 +20,9 @@ SpaceScienceExperimentation:
 
 SpaceScienceCreations:
   My own worked derived from "Space Science with Python"
+
+Calculus Review: 
+  Attempting to review for Calculus class next year by making a Calculus class in java
+
+Amazon Login:
+  My attempt at a phishing scam
