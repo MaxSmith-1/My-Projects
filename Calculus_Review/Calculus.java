@@ -199,8 +199,38 @@ public class Calculus {
 
     }
 
-    public double mRienmanSum(Double[] function, double start, double end, int intervals){
-        return 0.0;
+    public double mRienmannSum(Double[] function, double start, double end, int intervals){
+
+        Double[] range = new Double[intervals + 1];
+        Double[] points = new Double[intervals];
+        double slope = (end-start) / intervals;
+
+
+        for(int i = 0; i<range.length;i++){
+            range[i] = (i*slope);
+        }
+
+        for(int i = 0;i<points.length;i++){
+            points[i] = (range[i+1] + range[i]) /2;
+        }
+
+
+
+        for(double x: range){
+            System.out.println(x);
+        }
+        double answer = 0;
+
+        for(int i = 0; i<points.length;i++){
+
+            for(int j = 0; j<function.length;j++){
+
+                answer += function[j] * Math.pow(points[i], function.length - j - 1);
+            }
+        }
+
+        return answer * slope;
+
     }
     public double arcLength(Double[] a, double b, double c){
 
