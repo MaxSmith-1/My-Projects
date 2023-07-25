@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 
-
-
 //Function notation:
 //[1, 2, 3] -> 1x^2 + 2x^1 + 3
 //[2, 0, 5] -> 2x^2 + 5
 //[9] -> 9
+
 public class Calculus {
 
 
@@ -240,11 +239,31 @@ public class Calculus {
     }
     public double arcLength(Double[] a, double b, double c){
 
+        //only works for f(x) = polynomial to the order of less than or equal to 2
+
 
         Double[] f = derivitiveList(a);
 
+
         //squaring polynomial list into new list
 
+
+        if(f.length == 1){
+
+            f[0] = Math.pow(f[0], 2);
+
+            System.out.println(f[0]);
+            f[0] += 1;
+
+            System.out.println(f[0]);
+
+            f[0] = Math.sqrt(f[0]);
+
+
+            System.out.println(f[0]);
+
+            return integral(f, c, b);
+        }
         // add 1 to last term of new list
 
         //square root the new list
@@ -252,6 +271,94 @@ public class Calculus {
         // integral(newList, b,c)
 
 
+
+
+
+        if(f.length == 2){
+            double[] newList = new double[3];
+
+
+            int count = 0;
+            for(int i = 0;i<f.length;i++){
+
+                for(int j = 0;j<f.length;j++){
+
+                    if(count == 0){
+                        newList[2] += f[i]*f[j];
+                        count++;
+                    }
+                    else if(count ==1){
+                        newList[1] += f[i]*f[j];
+                        count++;
+                    }
+                    else{
+                        newList[0] += f[i]*f[j];
+                        count++;
+                    }
+                }
+                count = 1;
+            }
+
+            newList[2] +=1;
+
+            for(int i = 0;i< newList.length;i++){
+                newList[i] = Math.sqrt(newList[i]);
+            }
+
+            Double[] g = new Double[3];
+            for(int i = 0;i<g.length;i++){
+                g[i] = newList[i];
+
+            }
+            return integral(g, c, b);
+        }
+
+        if(f.length == 3) {
+            //doesn't work corrrectly: can't take square root of polynomial
+
+
+            double[] newList = new double[3];
+
+
+            int count = 0;
+            for (int i = 0; i < f.length; i++) {
+
+                for (int j = 0; j < f.length; j++) {
+
+                    if (count == 0) {
+                        newList[0] += f[i] * f[j];
+                        count++;
+                    } else if (count == 1) {
+                        newList[1] += f[i] * f[j];
+                        count++;
+                    } else {
+                        newList[2] += f[i] * f[j];
+                        count++;
+                    }
+                }
+                count = 1;
+
+            }
+
+
+            newList[2] += 1;
+
+            for(double x: newList){
+                System.out.println(x);
+            }
+
+            for (int i = 0; i < newList.length; i++) {
+                newList[i] = Math.sqrt(newList[i]);
+            }
+
+            Double[] g = new Double[3];
+            for (int i = 0; i < g.length; i++) {
+                g[i] = newList[i];
+
+            }
+            return integral(g, c, b);
+
+        }
         return 0.0;
 
     }
